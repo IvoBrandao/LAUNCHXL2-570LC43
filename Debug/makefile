@@ -166,34 +166,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-TMS570LC43xx.out \
+LAUNCHXL2-570LC43.out \
 
 EXE_OUTPUTS__QUOTED += \
-"TMS570LC43xx.out" \
+"LAUNCHXL2-570LC43.out" \
 
 BIN_OUTPUTS += \
-TMS570LC43xx.hex \
+LAUNCHXL2-570LC43.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"TMS570LC43xx.hex" \
+"LAUNCHXL2-570LC43.hex" \
 
 
 # All Target
 all: $(OBJS) $(LD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "TMS570LC43xx.out"
+	@$(MAKE) --no-print-directory -Onone "LAUNCHXL2-570LC43.out"
 
 # Tool invocations
-TMS570LC43xx.out: $(OBJS) $(LD_SRCS) $(GEN_CMDS)
+LAUNCHXL2-570LC43.out: $(OBJS) $(LD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: GNU Linker'
-	"C:/dev/tools/ti/ccs1010/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-gcc-7.2.1.exe" -marm -Og -g -gdwarf-3 -gstrict-dwarf -Wall -specs="nosys.specs" -mfloat-abi=hard -Wl,-Map,"TMS570LC43xx.map" -o"TMS570LC43xx.out" $(ORDERED_OBJS)
+	"C:/dev/tools/ti/ccs1010/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-gcc-7.2.1.exe" -marm -Og -g -gdwarf-3 -gstrict-dwarf -Wall -specs="nosys.specs" -mfloat-abi=hard -Wl,-Map,"LAUNCHXL2-570LC43.map" -o"LAUNCHXL2-570LC43.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-TMS570LC43xx.hex: $(EXE_OUTPUTS)
+LAUNCHXL2-570LC43.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: GNU Objcopy Utility'
-	"C:/dev/tools/ti/ccs1010/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-objcopy.exe"  $(EXE_OUTPUTS__QUOTED) "TMS570LC43xx.hex"
+	"C:/dev/tools/ti/ccs1010/ccs/tools/compiler/gcc-arm-none-eabi-7-2017-q4-major-win32/bin/arm-none-eabi-objcopy.exe"  $(EXE_OUTPUTS__QUOTED) "LAUNCHXL2-570LC43.hex"
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
